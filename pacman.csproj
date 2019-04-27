@@ -75,7 +75,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dialog.js" />
     <Content Include="Game.js" />
     <Content Include="index.htm" />
     <Content Include="script.js" />

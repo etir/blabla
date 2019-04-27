@@ -37,7 +37,45 @@
 
     <script type="text/javascript">
 
-    
+        function show() {
+            $("#dialog").show();
+        }
+
+
+        $(document).ready(function () {
+
+
+            $("#close").click(function () {
+                $("#dialog").hide();
+
+            });
+            $(document).keyup(function (e) {
+                if (e.keyCode == 27) {
+                    $("#dialog").hide();
+                }
+
+            });
+
+            /*
+                        $("#dialog").dialog({
+                            modal: true,
+                            autoOpen: false,
+
+                            open: function show () {
+                                $(".ui-widget-overlay").click(function () {
+                                    $("#dialog").dialog('close');
+                                })
+
+
+                            },
+                        });
+                        */
+            $('#content').click(function (e) {
+                if (!e.target.classList.contains("dialog"))
+                    $("#dialog").hide();
+
+            });
+        });
 
 
     </script>
@@ -94,13 +132,34 @@
             var Left = document.getElementById("left").value;
             var Right = document.getElementById("right").value;
             var NumOfBalls = document.getElementById("balls").value;
+            if (document.getElementById("balls").value == "") {
+                NumOfBalls=50;
+
+            }
             //alert(NumOfBalls)
             var BallsColor_1 = document.getElementById("ballsColor1").value;
+            if (document.getElementById("ballsColor1").value == "") {
+                BallsColor_1=ocument.getElementById("ballsColor1").value = "#ff0000";
+  
+            }
             //alert(BallsColor_1);
             var BallsColor_2 = document.getElementById("ballsColor2").value;
+            if (document.getElementById("ballsColor2").value == "") {
+                BallsColor_2 = ocument.getElementById("ballsColor2").value ="#00ff00";
+            }
             var BallsColor_3 = document.getElementById("ballsColor3").value;
+            if (document.getElementById("ballsColor3").value == "") {
+                BallsColor_3 = ocument.getElementById("ballsColor3").value= "#ffff00";
+            }
             var time = document.getElementById("Time").value;
+            if (ocument.getElementById("Time").value == "") {
+                time = 60000;
+            }
             var NumOfMomster = document.getElementById("numOfMonsters").value;
+            if (ocument.getElementById("numOfMonsters").value == "") {
+                NumOfMomster = 2;
+            }
+
             //alert(NumOfMomster);
 
         }
@@ -307,7 +366,6 @@
         <br />
         <br />
         <br />
-        <script type="text/javascript" src=dialod.js></script>
         <section id="dialog" class="web_dialog">
             <table style="width: 100%; border: 10px;" cellpadding="3" cellspacing="0">
                 <tr style="background-color:#408c99;">
@@ -472,7 +530,7 @@
 
 
     <div id="footer">
-        <p style="font-size:15px"> <b>URL:...... by: Shay Tayro email: shaytay@post.bgu.ac.il and Eti Reznik email: etir@post.bgu.ac.il</b></p>
+        <p style="font-size:15px"> <b>URL:https://etir.github.io/paceman/ by: Shay Tayro email: shaytay@post.bgu.ac.il and Eti Reznik email: etir@post.bgu.ac.il</b></p>
     </div>
 
 
@@ -490,7 +548,9 @@
 
 
         function startgame() {
+
             parameters();
+
             document.getElementById("seting").style.visibility = "hidden";
             document.getElementById("game").style.visibility = "visible";
             document.getElementById("usernameForHeader").value = document.getElementById("loguser").value;
@@ -521,7 +581,7 @@
 
             if (randomNum <= 0.2) {
                 document.getElementById("balls").value = "50";
-                document.getElementById("ballsColor1").value = " #ff0000";
+                document.getElementById("ballsColor1").value = "#ff0000";
                 document.getElementById("ballsColor2").value = "#00ff00";
                 document.getElementById("ballsColor3").value = "#ffff00";
                 document.getElementById("Time").value = "60000";
