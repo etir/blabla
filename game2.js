@@ -26,8 +26,8 @@ var right = 'ArrowRight';
 var life = 1;
 var coinnum=1;
 var isMonsterDead=false;
-
-InitVariables(numofmonsters, color1, color2, color3, NumOfBalls, TotalTime, up, down, left, right);
+stop();
+InitVariables(document.getElementById("numOfMonsters").value, document.getElementById("ballsColor2").value, document.getElementById("ballsColor1").value, document.getElementById("ballsColor3").value, document.getElementById("balls").value, parseInt(document.getElementById("Time").value), up, down, left, right);
 Start();
 
 function getRandomArbitrary(min, max) {
@@ -60,6 +60,7 @@ function timer(){
 }
 
 function InitVariables(Monstersnum, CO1, CO2, CO3, ballsnum, time, UP, DOWN, LEFT, RIGHT) {
+    numofmonsters=Monstersnum;
     for (var i = 0; i < Monstersnum; i++) {
         monsters[i] = new Object();
     }
@@ -309,7 +310,14 @@ function UpdatePosition() {
     }
 
 }
-
+function stop(){
+    audio2.pause();
+    context.clearRect(0, 0, canvas.width, canvas.height); //clean board
+    clearInterval(interval);
+    clearInterval(interval2);
+    clearInterval(interval3);
+    clearInterval(interval4);
+}
 function newGame() {
     games--;
     if (games < 1) {
@@ -450,7 +458,7 @@ function Updatemonsters() {
 function Draw(direct,isMonsterDead) {
     context.clearRect(0, 0, canvas.width, canvas.height);
     lblScore.value = score;
-    life.value = games;
+    lbllife.value = games;
     for (var i = 0; i < 15; i++) {
         for (var j = 0; j < 15; j++) {
             var center = new Object();

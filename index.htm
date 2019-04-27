@@ -124,40 +124,36 @@
     </script>
 
     <script>
+
+
         function parameters() {
 
             var Up = document.getElementById("up").value;
-            //alert(Up);
             var Down = document.getElementById("down").value;
             var Left = document.getElementById("left").value;
             var Right = document.getElementById("right").value;
-            var NumOfBalls = document.getElementById("balls").value;
+
             if (document.getElementById("balls").value == "") {
-                NumOfBalls=50;
+                document.getElementById("balls").value=50;
 
             }
             //alert(NumOfBalls)
-            var BallsColor_1 = document.getElementById("ballsColor1").value;
             if (document.getElementById("ballsColor1").value == "") {
-                BallsColor_1=ocument.getElementById("ballsColor1").value = "#ff0000";
+                document.getElementById("ballsColor1").value = "#ff0000";
   
             }
             //alert(BallsColor_1);
-            var BallsColor_2 = document.getElementById("ballsColor2").value;
             if (document.getElementById("ballsColor2").value == "") {
-                BallsColor_2 = ocument.getElementById("ballsColor2").value ="#00ff00";
+                document.getElementById("ballsColor2").value ="#00ff00";
             }
-            var BallsColor_3 = document.getElementById("ballsColor3").value;
             if (document.getElementById("ballsColor3").value == "") {
-                BallsColor_3 = ocument.getElementById("ballsColor3").value= "#ffff00";
+                document.getElementById("ballsColor3").value= "#ffff00";
             }
-            var time = document.getElementById("Time").value;
-            if (ocument.getElementById("Time").value == "") {
-                time = 60000;
+            if (document.getElementById("Time").value == "") {
+                document.getElementById("Time").value = 60;
             }
-            var NumOfMomster = document.getElementById("numOfMonsters").value;
-            if (ocument.getElementById("numOfMonsters").value == "") {
-                NumOfMomster = 2;
+            if (document.getElementById("numOfMonsters").value == "") {
+                document.getElementById("numOfMonsters").value = 3;
             }
 
             //alert(NumOfMomster);
@@ -234,7 +230,7 @@
         <b> <i style="color:white">TIME:</i></b>
         <input id="lblTime" type="text" />
         <b><i style="color:white">LIFE:</i></b>
-        <input id="life" type="text" />
+        <input id="lbllife" type="text" />
     </div>
 
 <div id="content">
@@ -471,13 +467,13 @@
             <tr>
                 <td>
                     <STRONG style="color:white">select Time in milliseconds: </STRONG>
-                    <INPUT NAME="Time" id="Time" TYPE="number" SIZE="25" autocomplete="60000 ms" min="60000" title="minimum is 60000 milliseconds">
+                    <INPUT NAME="Time" id="Time" TYPE="number" SIZE="25" autocomplete="60" min="60" title="minimum is 60000 milliseconds">
                 </td>
             </tr>
             <tr>
                 <td>
                     <STRONG style="color:white">select number of Monsters: </STRONG>
-                    <select name="numOfMonsters" id="numOfMonsters">
+                    <select name="numOfMonsters" id="numOfMonsters" TYPE="number">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -540,8 +536,7 @@
 
     <script>
         function stop() {
-        //    $.getScript("game.js", function stop() {
-
+           $.getScript("game.js", stop());
         }
     </script>
 
@@ -586,7 +581,7 @@
                 document.getElementById("ballsColor1").value = "#ff0000";
                 document.getElementById("ballsColor2").value = "#00ff00";
                 document.getElementById("ballsColor3").value = "#ffff00";
-                document.getElementById("Time").value = "60000";
+                document.getElementById("Time").value = "60";
                 document.getElementById("numOfMonsters").value = "1";
 
 
@@ -594,9 +589,9 @@
             else if (0.2 < randomNum && randomNum <= 0.4) {
                 document.getElementById("balls").value = "60";
                 document.getElementById("ballsColor1").value = "#00ff00";
-                document.getElementById("ballsColor2").value = " #ff0000";
+                document.getElementById("ballsColor2").value = "#0040ff";
                 document.getElementById("ballsColor3").value = "#ff00bf";
-                document.getElementById("Time").value = "65000";
+                document.getElementById("Time").value = "65";
                 document.getElementById("numOfMonsters").value = "2";
 
             }
@@ -604,8 +599,8 @@
                 document.getElementById("balls").value = "70";
                 document.getElementById("ballsColor1").value = "#00ffbf";
                 document.getElementById("ballsColor2").value = "#ff8000";
-                document.getElementById("ballsColor3").value = "#00ffbf";
-                document.getElementById("Time").value = "70000";
+                document.getElementById("ballsColor3").value = "#ff0000";
+                document.getElementById("Time").value = "70";
                 document.getElementById("numOfMonsters").value = "2";
 
 
@@ -615,7 +610,7 @@
                 document.getElementById("ballsColor1").value = "#00bfff";
                 document.getElementById("ballsColor2").value = "#a65959";
                 document.getElementById("ballsColor3").value = "#00ff00";
-                document.getElementById("Time").value = "75000";
+                document.getElementById("Time").value = "75";
                 document.getElementById("numOfMonsters").value = "2";
 
 
@@ -625,7 +620,7 @@
                 document.getElementById("ballsColor1").value = "#a65959";
                 document.getElementById("ballsColor2").value = "#0040ff";
                 document.getElementById("ballsColor3").value = "#ff8000";
-                document.getElementById("Time").value = "80000";
+                document.getElementById("Time").value = "80";
                 document.getElementById("numOfMonsters").value = "3";
 
 
