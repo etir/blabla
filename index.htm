@@ -259,17 +259,17 @@
         <br />
         <button style="left:7%" id="reg2">Register</button>
     </div>
-
     <div id="register">
-        <br />
+
         <h1 style="color:white"> Register </h1>
-        <br />
-        <br />
-        <br />
-        <br />
+
+        <img id="register" src="register.png" width="250" height="200">
+
+
         <form id="contact-form" method="get" onsubmit="return adduser()">
 
             <table>
+
                 <tr>
                     <td>
                         <STRONG style="color:white">UserName: </STRONG>
@@ -304,7 +304,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <STRONG style="color:white">Mail </STRONG>
+                        <STRONG style="color:white">Mail: </STRONG>
                         <INPUT NAME="mail" email="true" TYPE="email" SIZE="25" class="form-control" name="mail" placeholder="mail" id="mail" autocomplete='mail' value="" required title="Enter a valid email">
 
                     </td>
@@ -340,6 +340,8 @@
         <br />
         <br />
         <br />
+        <img id="profile" src="profile.png" width="250" height="150">
+
         <P>
             <STRONG>UserName: </STRONG>
             <INPUT NAME="usernameForLog" id="loguser" TYPE="text" SIZE="25">
@@ -498,7 +500,7 @@
 
     <div id="game" style="visibility:hidden">
 
-        <canvas id="canvas" height="600" width="600"></canvas>
+            <canvas id="canvas" height="920" width="920" style="outline: #c7bfe6 15px solid;"></canvas>
         <br />
         <br />
         <br />
@@ -538,7 +540,7 @@
 
     <script>
         function stop() {
-        //    $.getScript("Game.js", function stop() {
+        //    $.getScript("game.js", function stop() {
 
         }
     </script>
@@ -549,12 +551,12 @@
 
         function startgame() {
 
-          //  parameters();
+         //   parameters();
 
             document.getElementById("seting").style.visibility = "hidden";
             document.getElementById("game").style.visibility = "visible";
             document.getElementById("usernameForHeader").value = document.getElementById("loguser").value;
-            $.getScript("Game.js", function (data, textStatus, jqxhr) {
+            $.getScript("game2.js", function (data, textStatus, jqxhr) {
                 console.log(data); //data returned
                 console.log(textStatus); //success
                 console.log(jqxhr.status); //200
