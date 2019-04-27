@@ -1,0 +1,213 @@
+﻿body, html {
+    background-color: black;
+    width: 100%;
+}
+
+
+#header {
+    position: absolute;
+    top: 0px;
+    left: 36%;
+    width: 100%;
+}
+
+#header2 {
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    width: 100%;
+}
+
+h2 {
+    color: white;
+    position: absolute;
+    left: 7%;
+    font-style: italic;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    left: 7%;
+    font-style: italic;
+}
+
+p {
+    color: white;
+    font-style: italic;
+    font-family: Bodoni MT Black;
+    font-size: 20px;
+}
+
+#content {
+    position: absolute;
+    top: 250px;
+    left: 40%;
+    width: 80%;
+    height: 86%;
+}
+
+#canvas {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 400px;
+    height: 400px;
+}
+
+#Menu {
+    position: absolute;
+    top: 230px;
+    left: 7%;
+    width: 20%;
+    height: 86%;
+    font-size: 48px;
+    font-style: italic;
+    font-family: Bodoni MT Black;
+}
+
+
+
+button, #sub, #res {
+    -moz-box-shadow: 0px 8px 23px -6px #276873;
+    -webkit-box-shadow: 0px 8px 23px -6px #276873;
+    box-shadow: 0px 8px 23px -6px #276873;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #91cde3), color-stop(1, #408c99));
+    background: -moz-linear-gradient(top, #91cde3 5%, #408c99 100%);
+    background: -webkit-linear-gradient(top, #91cde3 5%, #408c99 100%);
+    background: -o-linear-gradient(top, #91cde3 5%, #408c99 100%);
+    background: -ms-linear-gradient(top, #91cde3 5%, #408c99 100%);
+    background: linear-gradient(to bottom, #91cde3 5%, #408c99 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#91cde3', endColorstr='#408c99',GradientType=0);
+    background-color: #91cde3;
+    -moz-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+    border: 2px solid #29668f;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 34px;
+    text-decoration: none;
+    text-shadow: 3px 3px 0px #3d768a;
+    width: 25%;
+}
+
+    button:hover, #sub:hover, #res:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #91cde3));
+        background: -moz-linear-gradient(top, #408c99 5%, #91cde3 100%);
+        background: -webkit-linear-gradient(top, #408c99 5%, #91cde3 100%);
+        background: -o-linear-gradient(top, #408c99 5%, #91cde3 100%);
+        background: -ms-linear-gradient(top, #408c99 5%, #91cde3 100%);
+        background: linear-gradient(to bottom, #408c99 5%, #91cde3 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#91cde3',GradientType=0);
+        background-color: #408c99;
+    }
+
+
+
+b {
+    color: white;
+    font-style: italic;
+}
+
+#dialog {
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color: #e3fbff;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
+
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+/* The Close Button */
+#close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    #close:hover,
+    #close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+#footer {
+    position: absolute;
+    top: 800px;
+    left: 20%;
+    width: 850px;
+}
+
+#message {
+    top: 0px;
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: fixed;
+    width: 50%;
+}
+
+    #message p {
+        font-size: 18px;
+    }
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+    .valid:before {
+        position: fixed;
+        left: -35px;
+        content: "✔";
+    }
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+    .invalid:before {
+        position: fixed;
+        left: -35px;
+        content: "✖";
+    }
+
+STRONG {
+    font-size: 20px;
+    font-style: italic;
+    font-family: Bodoni MT Black;
+}

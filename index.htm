@@ -1,0 +1,584 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="Style.css">
+    <script type="text/javascript" src=script.js></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <script src="../dist/jquery.validate.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <script src="../dist/jquery.validate.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="jquery.js" type="text/javascript"></script>
+
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+
+    </script>
+
+
+    <script>
+    $(function () {
+    $("#datepicker").datepicker();
+    });
+    </script >
+
+    <script type="text/javascript">
+
+    
+
+
+    </script>
+
+    <script>
+
+
+
+    </script>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+
+        jQuery(document).ready(function () {
+            jQuery("#contact-form").validate({
+                rules: {
+                    firstname: {
+                        number: false,
+                    },
+
+
+
+                    mail: {
+                        required: true,
+                        email: true,//add an email rule that will ensure the value entered is valid email id.
+                        maxlength: 255,
+                    },
+
+                }
+            });
+
+        });
+
+        messages: {
+            username: 'This field is required';
+            lastname: 'This field is required';
+            u_email: 'Enter a valid email';
+        }
+
+
+
+    </script>
+
+    <script>
+        function parameters() {
+
+            var Up = document.getElementById("up").value;
+            //alert(Up);
+            var Down = document.getElementById("down").value;
+            var Left = document.getElementById("left").value;
+            var Right = document.getElementById("right").value;
+            var NumOfBalls = document.getElementById("balls").value;
+            //alert(NumOfBalls)
+            var BallsColor_1 = document.getElementById("ballsColor1").value;
+            //alert(BallsColor_1);
+            var BallsColor_2 = document.getElementById("ballsColor2").value;
+            var BallsColor_3 = document.getElementById("ballsColor3").value;
+            var time = document.getElementById("Time").value;
+            var NumOfMomster = document.getElementById("numOfMonsters").value;
+            //alert(NumOfMomster);
+
+        }
+    </script>
+
+    <script>
+
+        var Users = new Array();
+        var counter = 0;
+        var UserA = new Array();
+        UserA[0] = "a";
+        UserA[1] = "a";
+
+        Users[counter] = UserA;
+        counter++;
+
+
+        function adduser() {
+            var newusers = new Array();
+
+            newusers[0] = document.getElementById("username").value;
+            newusers[1] = document.getElementById("password").value;
+
+            Users[counter] = newusers;
+            counter++;
+            alert("User added succefully");
+            $("#register").hide();
+        }
+
+
+        function validate() {
+
+            var usertocheck = document.getElementById("loguser").value;
+            var passtocheck = document.getElementById("logpassword").value;
+            var found = false;
+            for (var i = 0; i < Users.length; i++) {
+                if (Users[i][0] == usertocheck && Users[i][1] == passtocheck) {
+                    found = true;
+                    $("#login").hide();
+                    document.getElementById("seting").style.visibility = "visible";
+
+
+
+                }
+            }
+
+            if (found == false) {
+                alert("Inccorrect User or Password");
+            }
+
+
+
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div id="header">
+        <img id="logo" src="logo.gif" width="400" height="150">
+        <h2 style="font-size:18Px; left:0%">Shay Tayro ID: 307832899, Eti Reznik ID: 313279242</h2>
+</div>
+<div id="header2">
+        <b><i style="color:white">USERNAME:</i></b>
+        <input id="usernameForHeader" type="text" />
+        <b><i style="color:white">SCORE:</i></b>
+        <input id="lblScore" type="text" />
+        <b> <i style="color:white">TIME:</i></b>
+        <input id="lblTime" type="text" />
+        <b><i style="color:white">LIFE:</i></b>
+        <input id="life" type="text" />
+    </div>
+
+<div id="content">
+
+    <div id="Welcome">
+        <br />
+        <br />
+        <h1 style="color:white"> Welcome </h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button style="left:7%" id="log2">Login</button>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button style="left:7%" id="reg2">Register</button>
+    </div>
+
+    <div id="register">
+        <br />
+        <h1 style="color:white"> Register </h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <form id="contact-form" method="get" onsubmit="return adduser()">
+
+            <table>
+                <tr>
+                    <td>
+                        <STRONG style="color:white">UserName: </STRONG>
+                        <INPUT NAME="username" id="username" TYPE="text" SIZE="25" class="form-control" placeholder="Name" autocomplete='name' value="" required>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <STRONG style="color:white">Password:</STRONG>
+                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z]).{8,}" required minlength="8" cheracters="false" TYPE="password" SIZE="25" class="form-control" placeholder="password" autocomplete='password' value="" title="Must contain at least one number and letter, and at least 8 or more characters">
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <STRONG style="color:white">First Name: </STRONG>
+                        <INPUT onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" NAME="firstname" TYPE="text" SIZE="25" class="form-control" name="firstname" placeholder="firstname" id="firstname" autocomplete='firstname' value="" required title="Please enter your first name, no numbers">
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <STRONG style="color:white">Last Name: </STRONG>
+                        <INPUT onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" NAME="lastname" TYPE="text" SIZE="25" class="form-control" name="lastname" placeholder="lastname" id="lastname" autocomplete='lastname' value="" required title="Please enter your last name, no numbers">
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <STRONG style="color:white">Mail </STRONG>
+                        <INPUT NAME="mail" email="true" TYPE="email" SIZE="25" class="form-control" name="mail" placeholder="mail" id="mail" autocomplete='mail' value="" required title="Enter a valid email">
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-size:20px">Date: <input type="text" id="datepicker" class="form-control" name="date" placeholder="date" autocomplete='date' value="" required></p>
+
+                    </td>
+
+                </tr>
+            </table>
+
+
+            <INPUT id="sub" TYPE="submit" onclick="checkForm(contact-form)" VALUE="Submit">
+            <INPUT id="res" TYPE="reset" VALUE="Clear">
+        </form>
+
+    </div>
+
+    <div id="message">
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A letter</p>
+        <p id="number" class="invalid">A number</p>
+        <p id="length" class="invalid">Minimum 8 characters</p>
+    </div>
+    <div id="login">
+        <br />
+        <br />
+        <h1 style="color:white">Login</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <P>
+            <STRONG>UserName: </STRONG>
+            <INPUT NAME="usernameForLog" id="loguser" TYPE="text" SIZE="25">
+            <br />
+            <br />
+        </P>
+        <P>
+            <STRONG>Password:</STRONG>
+            <INPUT NAME="passwordForLog" id="logpassword" TYPE="password" SIZE="25">
+            <br />
+            <br />
+        </P>
+        <button style="left:20%" id="login" onclick="return validate()">      Login      </button>
+
+    </div>
+
+    <div id="About">
+
+        <br>
+        <br>
+        <h1 style="color:white">About</h1>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <script type="text/javascript" src=dialod.js></script>
+        <section id="dialog" class="web_dialog">
+            <table style="width: 100%; border: 10px;" cellpadding="3" cellspacing="0">
+                <tr style="background-color:#408c99;">
+                    <td><b>about</b></td>
+                    <td>
+                        <span id="close" class="close">&times;</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><b style="color:black">Eti Reznik & Shay Tayro</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <b style="color:black">jQuery Pluging:</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b style="color:black">Template:</b></td>
+                </tr>
+                <tr>
+                    <td><b style="color:black">Difficulties:</b></td>
+                </tr>
+            </table>
+        </section>
+
+
+    </div>
+
+    <div id="seting" style="visibility:hidden">
+        <h1 style="color:white">Settings</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>
+                    <STRONG style="color:white">Up: </STRONG> <select id="up">
+                        <option>UP</option>
+                        <option>8</option>
+                        <option>w</option>
+                        <option>i</option>
+                    </select>
+                </td>
+
+                <td>
+                    <STRONG style="color:white">Down: </STRONG>
+                    <select id="down">
+                        <option>Down</option>
+                        <option>2</option>
+                        <option>s</option>
+                        <option>k</option>
+                    </select>
+                </td>
+                <td>
+                    <STRONG style="color:white">Left: </STRONG>
+                    <select id="left">
+                        <option>Left</option>
+                        <option>4</option>
+                        <option>a</option>
+                        <option>j</option>
+                    </select>
+                </td>
+                <td>
+                    <STRONG style="color:white">Right: </STRONG>
+                    <select id="right">
+                        <option>Right</option>
+                        <option>6</option>
+                        <option>d</option>
+                        <option>l</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <STRONG style="color:white">Number of game balls: </STRONG>
+                    <INPUT NAME="balls" id="balls" TYPE="number" SIZE="25" min="50" max="90" autocomplete="50" title="minimum 50 and maximum 90">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <STRONG style="color:white">select color of 5 balls (60% of balls): </STRONG>
+                    <INPUT NAME="ballsColor1" id="ballsColor1" TYPE="color" SIZE="25" autocomplete="blue">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <STRONG style="color:white">select color of 15 balls (30% of balls): </STRONG>
+                    <INPUT NAME="ballsColor2" id="ballsColor2" TYPE="color" SIZE="25" autocomplete="green">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <STRONG style="color:white">select color of 25 balls (10% of balls): </STRONG>
+                    <INPUT NAME="ballsColor3" id="ballsColor3" TYPE="color" SIZE="25" autocomplete="red" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <STRONG style="color:white">select Time in milliseconds: </STRONG>
+                    <INPUT NAME="Time" id="Time" TYPE="number" SIZE="25" autocomplete="60000 ms" min="60000" title="minimum is 60000 milliseconds">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <STRONG style="color:white">select number of Monsters: </STRONG>
+                    <select name="numOfMonsters" id="numOfMonsters">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+
+        <button id="random" onclick="randomVal()">Random</button>
+        <button id="Start" onclick="startgame()">Start</button>
+
+
+
+
+
+    </div>
+
+    <div id="game" style="visibility:hidden">
+
+        <canvas id="canvas" height="600" width="600"></canvas>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button id="stop" onclick="stop()">Stop</button>
+        <button id="New Game" onclick="startgame()">New Game</button>
+
+    </div>
+</div>
+
+
+
+    <div id="Menu">
+        <a href="#Welcome" onclick="stop()" id="wel" style="color:#91cde3">Welcome</a>
+        <br />
+        <br />
+        <a href="#Register" onclick="stop()" id="reg" style="color:#91cde3">Register</a>
+        <br />
+        <br />
+        <a href="#Login"  onclick="stop()" id="log" style="color:#91cde3">Login</a>
+        <br />
+        <br />
+        <a href="#About" onclick="show(); stop()" id="ab" style="color:#91cde3">About</a>
+    </div>
+
+
+
+
+    <div id="footer">
+        <p style="font-size:15px"> <b>URL:...... by: Shay Tayro email: shaytay@post.bgu.ac.il and Eti Reznik email: etir@post.bgu.ac.il</b></p>
+    </div>
+
+
+    <script src="SwitchDivs.js" type="text/javascript"></script>
+
+    <script>
+        function stop() {
+        //    $.getScript("Game.js", function stop() {
+
+        }
+    </script>
+
+
+    <script>
+
+
+        function startgame() {
+            parameters();
+            document.getElementById("seting").style.visibility = "hidden";
+            document.getElementById("game").style.visibility = "visible";
+            document.getElementById("usernameForHeader").value = document.getElementById("loguser").value;
+            $.getScript("Game.js", function (data, textStatus, jqxhr) {
+                console.log(data); //data returned
+                console.log(textStatus); //success
+                console.log(jqxhr.status); //200
+                console.log('Load was performed.');
+            });
+
+
+        }
+
+
+    </script>
+
+
+    <script>
+
+        function randomVal() {
+
+            document.getElementById("up").value = "UP";
+            document.getElementById("down").value = "Down";
+            document.getElementById("left").value = "Left";
+            document.getElementById("right").value = "Right";
+
+            var randomNum = Math.random();
+
+            if (randomNum <= 0.2) {
+                document.getElementById("balls").value = "50";
+                document.getElementById("ballsColor1").value = " #ff0000";
+                document.getElementById("ballsColor2").value = "#00ff00";
+                document.getElementById("ballsColor3").value = "#ffff00";
+                document.getElementById("Time").value = "60000";
+                document.getElementById("numOfMonsters").value = "1";
+
+
+            }
+            else if (0.2 < randomNum && randomNum <= 0.4) {
+                document.getElementById("balls").value = "60";
+                document.getElementById("ballsColor1").value = "#00ff00";
+                document.getElementById("ballsColor2").value = " #ff0000";
+                document.getElementById("ballsColor3").value = "#ff00bf";
+                document.getElementById("Time").value = "65000";
+                document.getElementById("numOfMonsters").value = "2";
+
+            }
+            else if (0.4 < randomNum && randomNum <= 0.6) {
+                document.getElementById("balls").value = "70";
+                document.getElementById("ballsColor1").value = "#00ffbf";
+                document.getElementById("ballsColor2").value = "#ff8000";
+                document.getElementById("ballsColor3").value = "#00ffbf";
+                document.getElementById("Time").value = "70000";
+                document.getElementById("numOfMonsters").value = "2";
+
+
+            }
+            else if (0.6 < randomNum && randomNum <= 0.8) {
+                document.getElementById("balls").value = "80";
+                document.getElementById("ballsColor1").value = "#00bfff";
+                document.getElementById("ballsColor2").value = "#a65959";
+                document.getElementById("ballsColor3").value = "#00ff00";
+                document.getElementById("Time").value = "75000";
+                document.getElementById("numOfMonsters").value = "2";
+
+
+            }
+            else if (0.8 < randomNum) {
+                document.getElementById("balls").value = "90";
+                document.getElementById("ballsColor1").value = "#a65959";
+                document.getElementById("ballsColor2").value = "#0040ff";
+                document.getElementById("ballsColor3").value = "#ff8000";
+                document.getElementById("Time").value = "80000";
+                document.getElementById("numOfMonsters").value = "3";
+
+
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <script type="text/javascript" src=Game.js> </script>-->
