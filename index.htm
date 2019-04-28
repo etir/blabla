@@ -246,20 +246,19 @@
         <br />
         <br />
         <br />
-        <button style="left:7%" id="log2">Login</button>
+        <button style="left:7%;width: 25%" id="log2">Login</button>
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <button style="left:7%" id="reg2">Register</button>
+
+        <button style="left:7%;width: 25%" id="reg2">Register</button>
     </div>
     <div id="register">
 
         <h1 style="color:white"> Register </h1>
 
-        <img id="register" src="register.png" width="250" height="200">
+        <img src="register.png" width="250" height="200">
 
 
         <form id="contact-form" method="get" onsubmit="return adduser()">
@@ -308,16 +307,18 @@
                 </tr>
                 <tr>
                     <td>
-                        <p style="font-size:20px">Date: <input type="text" id="datepicker" class="form-control" name="date" placeholder="date" autocomplete='date' value="" required></p>
+                        <STRONG style="color:white">Date: </STRONG>
+                        <input type="text" id="datepicker" class="form-control" name="date" placeholder="date" autocomplete='date' value="" required>
 
                     </td>
 
                 </tr>
             </table>
+            <br/>
+            <br/>
 
-
-            <INPUT id="sub" TYPE="submit" onclick="checkForm(contact-form)" VALUE="Submit">
-            <INPUT id="res" TYPE="reset" VALUE="Clear">
+            <INPUT style="width: 18%" id="sub" TYPE="submit" onclick="checkForm(contact-form)" VALUE="Submit">
+            <INPUT style="width: 18%" id="res" TYPE="reset" VALUE="Clear">
         </form>
 
     </div>
@@ -350,7 +351,7 @@
             <br />
             <br />
         </P>
-        <button style="left:20%" id="login" onclick="return validate()">      Login      </button>
+        <button style="left:20%;width: 30%" id="login2" onclick="return validate()">      Login      </button>
 
     </div>
 
@@ -402,7 +403,7 @@
         <table>
             <tr>
                 <td>
-                    <STRONG style="color:white">Up: </STRONG> <select id="up">
+                    <STRONG style="color:white; width: 10%">Up: </STRONG> <select id="up">
                         <option>UP</option>
                         <option>8</option>
                         <option>w</option>
@@ -411,7 +412,7 @@
                 </td>
 
                 <td>
-                    <STRONG style="color:white">Down: </STRONG>
+                    <STRONG style="color:white; width: 10%">Down: </STRONG>
                     <select id="down">
                         <option>Down</option>
                         <option>2</option>
@@ -420,7 +421,7 @@
                     </select>
                 </td>
                 <td>
-                    <STRONG style="color:white">Left: </STRONG>
+                    <STRONG style="color:white; width: 10%">Left: </STRONG>
                     <select id="left">
                         <option>Left</option>
                         <option>4</option>
@@ -429,7 +430,7 @@
                     </select>
                 </td>
                 <td>
-                    <STRONG style="color:white">Right: </STRONG>
+                    <STRONG style="color:white; width: 10%">Right: </STRONG>
                     <select id="right">
                         <option>Right</option>
                         <option>6</option>
@@ -443,7 +444,7 @@
             <tr>
                 <td>
                     <STRONG style="color:white">Number of game balls: </STRONG>
-                    <INPUT NAME="balls" id="balls" TYPE="number" SIZE="25" min="50" max="90" autocomplete="50" title="minimum 50 and maximum 90">
+                    <INPUT style="width: 10%" NAME="balls" id="balls" TYPE="number" SIZE="25" min="50" max="90" autocomplete="50" title="minimum 50 and maximum 90">
                 </td>
             </tr>
             <tr>
@@ -466,14 +467,14 @@
             </tr>
             <tr>
                 <td>
-                    <STRONG style="color:white">select Time in milliseconds: </STRONG>
-                    <INPUT NAME="Time" id="Time" TYPE="number" SIZE="25" autocomplete="60" min="60" title="minimum is 60000 milliseconds">
+                    <STRONG style="color:white">select Time in seconds: </STRONG>
+                    <INPUT style="width: 10%" NAME="Time" id="Time" TYPE="number" SIZE="25" autocomplete="60" min="60" title="minimum is 60 seconds">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <STRONG style="color:white">select number of Monsters: </STRONG>
-                    <select name="numOfMonsters" id="numOfMonsters" TYPE="number">
+                    <STRONG style="color:white">select number of Monsters:  </STRONG>
+                    <select style="width: 10%" name="numOfMonsters" id="numOfMonsters" TYPE="number">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -485,8 +486,8 @@
         <br />
         <br />
 
-        <button id="random" onclick="randomVal()">Random</button>
-        <button id="Start" onclick="startgame()">Start</button>
+        <button style="width: 20%" id="random" onclick="randomVal()">Random</button>
+        <button style="width: 20%" id="Start" onclick="startgame()">Start</button>
 
 
 
@@ -503,8 +504,8 @@
         <br />
         <br />
         <br />
-        <button id="stop" onclick="stop()">Stop</button>
-        <button id="New Game" onclick="startgame()">New Game</button>
+        <button style="width: 20%"  id="stop" onclick="stop()">Stop</button>
+        <button style="width: 20%"  id="New Game" onclick="startgame()">New Game</button>
 
     </div>
 </div>
