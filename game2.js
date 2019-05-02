@@ -27,7 +27,7 @@ var life = 1;
 var coinnum=1;
 var isMonsterDead=false;
 stop();
-InitVariables(document.getElementById("numOfMonsters").value, document.getElementById("ballsColor2").value, document.getElementById("ballsColor1").value, document.getElementById("ballsColor3").value, document.getElementById("balls").value, parseInt(document.getElementById("Time").value), up, down, left, right);
+InitVariables(document.getElementById("numOfMonsters").value, document.getElementById("ballsColor2").value, document.getElementById("ballsColor1").value, document.getElementById("ballsColor3").value, document.getElementById("balls").value, parseInt(document.getElementById("Time").value), document.getElementById("kup").value, document.getElementById("kdown").value, document.getElementById("kleft").value, document.getElementById("kright").value);
 Start();
 
 function getRandomArbitrary(min, max) {
@@ -53,7 +53,9 @@ function timer(){
             alert("you can do better"+" " +score);
         }
         else{
+            stop();
             alert("we have a Winner"+" " +score);
+
 
         }
     }
@@ -88,19 +90,19 @@ function InitVariables(Monstersnum, CO1, CO2, CO3, ballsnum, time, UP, DOWN, LEF
 }
 
 function GetKeyPressed() {
-    if (keysDown[up]) {
+    if (keysDown[up] || keysDown[up.substring(0,up.length-1)]) {
         return 1;
     }
 
-    if (keysDown[down]) {
+    if (keysDown[down]|| keysDown[down.substring(0,down.length-1)]) {
         return 2;
     }
 
-    if (keysDown[left]) {
+    if (keysDown[left]|| keysDown[left.substring(0,left.length-1)]) {
         return 3;
     }
 
-    if (keysDown[right]) {
+    if (keysDown[right]|| keysDown[right.substring(0,right.length-1)]) {
         return 4;
     }
 
@@ -224,7 +226,7 @@ function Start() {
 
     interval = setInterval(UpdatePosition, 200);
     //UpdatePosition();
-    interval2 = setInterval(Updatemonsters, 800);
+    interval2 = setInterval(Updatemonsters, 300);
     //Updatemonsters();
     song();
     interval3 = setInterval(timer, 1000);
@@ -232,7 +234,15 @@ function Start() {
 }
 
 function UpdatePosition() {
-    if(gameover()){alert("We have a Winner!!!  score : " + score)}
+
+    for(var m=0;m<numofmonsters;m++) {
+        if(monsters[m].i==shape.i && monsters[m].j==shape.j){
+            newGame();
+            return;
+        }
+    }
+
+    if(gameover()){stop(); alert("We have a Winner!!!  score : " + score)}
 
     board[shape.i][shape.j] = 0;
     var x = GetKeyPressed();
@@ -302,12 +312,6 @@ function UpdatePosition() {
 
     Draw(x,isMonsterDead);
 
-    for(var m=0;m<numofmonsters;m++) {
-        if(monsters[m].i==shape.i && monsters[m].j==shape.j){
-            newGame();
-            return;
-        }
-    }
 
 }
 function stop(){
@@ -327,7 +331,7 @@ function newGame() {
         clearInterval(interval2);
         clearInterval(interval3);
         clearInterval(interval4);
-        window.alert("Game Over");
+        window.alert("You Lost!");
 
     }
 

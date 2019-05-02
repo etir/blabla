@@ -35,7 +35,6 @@
             color: white;
             font-style: italic;
             font-family: Bodoni MT Black;
-            font-size: 20px;
         }
 
         #content {
@@ -46,6 +45,7 @@
             width: 80%;
             height: 86%;
         }
+
 
 #canvas {
     position: absolute;
@@ -121,8 +121,9 @@
             animation-duration: 0.4s;
             background-color: #e3fbff;
             position: absolute;
-            width: 50%;
-            height: 50%;
+            width: 60%;
+            height: 90%;
+            left:0%;
         }
 
 

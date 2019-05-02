@@ -69,13 +69,15 @@
 
                             },
                         });
-                        */
+ */
             $('#content').click(function (e) {
                 if (!e.target.classList.contains("dialog"))
                     $("#dialog").hide();
 
             });
+
         });
+
 
 
     </script>
@@ -161,58 +163,8 @@
         }
     </script>
 
-    <script>
 
-        var Users = new Array();
-        var counter = 0;
-        var UserA = new Array();
-        UserA[0] = "a";
-        UserA[1] = "a";
-
-        Users[counter] = UserA;
-        counter++;
-
-
-        function adduser() {
-            var newusers = new Array();
-
-            newusers[0] = document.getElementById("username").value;
-            newusers[1] = document.getElementById("password").value;
-
-            Users[counter] = newusers;
-            counter++;
-            alert("User added succefully");
-            $("#register").hide();
-        }
-
-
-        function validate() {
-
-            var usertocheck = document.getElementById("loguser").value;
-            var passtocheck = document.getElementById("logpassword").value;
-            var found = false;
-            for (var i = 0; i < Users.length; i++) {
-                if (Users[i][0] == usertocheck && Users[i][1] == passtocheck) {
-                    found = true;
-                    $("#login").hide();
-                    document.getElementById("seting").style.visibility = "visible";
-
-
-
-                }
-            }
-
-            if (found == false) {
-                alert("Inccorrect User or Password");
-            }
-
-
-
-        }
-
-    </script>
-
-
+    <script src="script3.js"></script>
 
 </head>
 
@@ -261,7 +213,7 @@
         <img src="register.png" width="250" height="200">
 
 
-        <form id="contact-form" method="get" onsubmit="return adduser()">
+        <form id="contact-form" method="get" onsubmit="adduser(); return false;">
 
             <table>
 
@@ -325,9 +277,9 @@
 
     <div id="message">
         <h3>Password must contain the following:</h3>
-        <p id="letter" class="invalid">A letter</p>
-        <p id="number" class="invalid">A number</p>
-        <p id="length" class="invalid">Minimum 8 characters</p>
+        <p Style="font-size:20px" id="letter" class="invalid">A letter</p>
+        <p Style="font-size:20px" id="number" class="invalid">A number</p>
+        <p Style="font-size:20px" id="length" class="invalid">Minimum 8 characters</p>
     </div>
     <div id="login">
         <br />
@@ -340,14 +292,14 @@
         <img id="profile" src="profile.png" width="250" height="150">
 
         <P>
-            <STRONG>UserName: </STRONG>
-            <INPUT NAME="usernameForLog" id="loguser" TYPE="text" SIZE="25">
+            <STRONG Style="font-size:20px"> UserName: </STRONG>
+            <INPUT Style="font-size:20px" NAME="usernameForLog" id="loguser" TYPE="text" SIZE="25">
             <br />
             <br />
         </P>
         <P>
-            <STRONG>Password:</STRONG>
-            <INPUT NAME="passwordForLog" id="logpassword" TYPE="password" SIZE="25">
+            <STRONG Style="font-size:20px">Password:</STRONG>
+            <INPUT Style="font-size:20px" NAME="passwordForLog" id="logpassword" TYPE="password" SIZE="25">
             <br />
             <br />
         </P>
@@ -357,8 +309,6 @@
 
     <div id="About">
 
-        <br>
-        <br>
         <h1 style="color:white">About</h1>
 
         <br />
@@ -374,19 +324,42 @@
 
                     </td>
                 </tr>
+                </table>
+
+                <table>
                 <tr>
-                    <td><b style="color:black">Eti Reznik & Shay Tayro</b></td>
+                    <b style="color:black">Eti Reznik & Shay Tayro</b>
                 </tr>
                 <tr>
-                    <td>
-                        <b style="color:black">jQuery Pluging:</b>
-                    </td>
+                    <p style="color:black"> Hello!! We are a third year student At Department of Information Systems Engineering at the Ben-Gurion University.                  gurion university of the negev.</p>
+                    <p style="color:black"> We did this assignment as part of the course of "Internet Programming Environments" </p>
                 </tr>
                 <tr>
-                    <td><b style="color:black">Template:</b></td>
+
+                        <b  style="color:black">jQuery Pluging:</b>
+
                 </tr>
                 <tr>
-                    <td><b style="color:black">Difficulties:</b></td>
+                    <p style="color:black"> We used jQuery pluging like: $("#id") to get data from the object and $(document).ready to get DOM after page was
+                        loaded. we used this pluging in "Register" form, "About" part and application of the "pacman" game.</p>
+                </tr>
+                <tr>
+                    <b style="color:black">Template:</b>
+                </tr>
+                    <tr>
+                      <p style="color:black">We took an original code and improved it</p>
+                    </tr>
+                <tr>
+                   <b style="color:black">Difficulties:</b>
+                </tr>
+                <tr>
+                    <p style="color:black">
+                        It is difficult to enter an existing code and understand it in order to start the work.
+                        Another thing that was hard for us was learning a new language.
+                    </p>
+                </tr>
+                <tr>
+                    <p style="color:black"> In general, we enjoyed to create this game, and we are learned a lot about javeScript and jQuery.</p>
                 </tr>
             </table>
         </section>
@@ -403,40 +376,21 @@
         <table>
             <tr>
                 <td>
-                    <STRONG style="color:white; width: 10%">Up: </STRONG> <select id="up">
-                        <option>UP</option>
-                        <option>8</option>
-                        <option>w</option>
-                        <option>i</option>
-                    </select>
+                    <STRONG style="color:white; width: 10%">Up:  </STRONG>
+                    <input type="text" placeholder="Press keys here" SIZE="10" id="kup">
                 </td>
 
                 <td>
-                    <STRONG style="color:white; width: 10%">Down: </STRONG>
-                    <select id="down">
-                        <option>Down</option>
-                        <option>2</option>
-                        <option>s</option>
-                        <option>k</option>
-                    </select>
+                    <STRONG style="color:white; width: 10%">  Down:  </STRONG>
+                    <input type="text" placeholder="Press keys here" SIZE="10" id="kdown">
                 </td>
                 <td>
-                    <STRONG style="color:white; width: 10%">Left: </STRONG>
-                    <select id="left">
-                        <option>Left</option>
-                        <option>4</option>
-                        <option>a</option>
-                        <option>j</option>
-                    </select>
+                    <STRONG style="color:white; width: 10%">  Left:  </STRONG>
+                    <input type="text" placeholder="Press keys here" SIZE="10" id="kleft">
                 </td>
                 <td>
-                    <STRONG style="color:white; width: 10%">Right: </STRONG>
-                    <select id="right">
-                        <option>Right</option>
-                        <option>6</option>
-                        <option>d</option>
-                        <option>l</option>
-                    </select>
+                    <STRONG style="color:white; width: 10%">  Right:  </STRONG>
+                    <input type="text" placeholder="Press keys here" SIZE="10" id="kright">
                 </td>
             </tr>
         </table>
@@ -444,25 +398,25 @@
             <tr>
                 <td>
                     <STRONG style="color:white">Number of game balls: </STRONG>
-                    <INPUT style="width: 10%" NAME="balls" id="balls" TYPE="number" SIZE="25" min="50" max="90" autocomplete="50" title="minimum 50 and maximum 90">
+                    <INPUT style="width: 10%"  NAME="balls" id="balls" TYPE="number" SIZE="25" min="50" max="90" autocomplete="50" title="minimum 50 and maximum 90">
                 </td>
             </tr>
             <tr>
                 <td>
                     <STRONG style="color:white">select color of 5 balls (60% of balls): </STRONG>
-                    <INPUT NAME="ballsColor1" id="ballsColor1" TYPE="color" SIZE="25" autocomplete="blue">
+                    <INPUT NAME="ballsColor1" id="ballsColor1" TYPE="color" SIZE="25" value="#ff8000" autocomplete="blue">
                 </td>
             </tr>
             <tr>
                 <td>
                     <STRONG style="color:white">select color of 15 balls (30% of balls): </STRONG>
-                    <INPUT NAME="ballsColor2" id="ballsColor2" TYPE="color" SIZE="25" autocomplete="green">
+                    <INPUT NAME="ballsColor2" id="ballsColor2" TYPE="color" SIZE="25" value ="#ffff00" autocomplete="green">
                 </td>
             </tr>
             <tr>
                 <td>
                     <STRONG style="color:white">select color of 25 balls (10% of balls): </STRONG>
-                    <INPUT NAME="ballsColor3" id="ballsColor3" TYPE="color" SIZE="25" autocomplete="red" />
+                    <INPUT NAME="ballsColor3" id="ballsColor3" TYPE="color" SIZE="25" value="#0040ff" autocomplete="red" />
                 </td>
             </tr>
             <tr>
@@ -485,11 +439,9 @@
         </table>
         <br />
         <br />
-
         <button style="width: 20%" id="random" onclick="randomVal()">Random</button>
-        <button style="width: 20%" id="Start" onclick="startgame()">Start</button>
-
-
+        <button  style="width: 20%" id="Start" onclick="startgame()">Start</button>
+        <script src="script2.js"></script>
 
 
 
@@ -546,8 +498,24 @@
 
 
         function startgame() {
+            //   parameters();
 
-         //   parameters();
+            if(document.getElementById("balls").value<50 || document.getElementById("balls").value>90){
+                alert("number of balls should be between 50 to 90")
+                return;
+            }
+
+            if(document.getElementById("Time").value<60){
+                alert("time should be longer than 60 sec")
+                return;
+            }
+
+
+            if(document.getElementById("kup").value=="" || document.getElementById("kdown").value=="" ||document.getElementById("kleft").value=="" || document.getElementById("kright").value==""){
+                alert("Select keys or click random")
+                return;
+            }
+
 
             document.getElementById("seting").style.visibility = "hidden";
             document.getElementById("game").style.visibility = "visible";
@@ -570,10 +538,10 @@
 
         function randomVal() {
 
-            document.getElementById("up").value = "UP";
-            document.getElementById("down").value = "Down";
-            document.getElementById("left").value = "Left";
-            document.getElementById("right").value = "Right";
+            document.getElementById("kup").value = "ArrowUp";
+            document.getElementById("kdown").value = "ArrowDown";
+            document.getElementById("kleft").value = "ArrowLeft";
+            document.getElementById("kright").value = "ArrowRight";
 
             var randomNum = Math.random();
 
@@ -629,7 +597,6 @@
 
         }
     </script>
-
 
 </body>
 
