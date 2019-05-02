@@ -242,6 +242,13 @@ function UpdatePosition() {
         }
     }
 
+    if (shape.i == coin.i && shape.j == coin.j) {
+        score = score + 50;
+        coin.i=100000;
+        coin.j=100000;
+        coinnum++;
+    }
+
     if(gameover()){stop(); alert("We have a Winner!!!  score : " + score)}
 
     board[shape.i][shape.j] = 0;
@@ -287,12 +294,6 @@ function UpdatePosition() {
         score = score + 25;
     }
 
-    if (shape.i == coin.i && shape.j == coin.j) {
-        score = score + 50;
-        coin.i=100000;
-        coin.j=100000;
-        coinnum++;
-    }
 
     if (shape.i == heart.i && shape.j == heart.j) {
         games++;
